@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanks - Youd</title>
+    <!-- <link rel="stylesheet" href="../static/thx.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/thx.css') }}" />
+    <style>
+      body {
+        flex-direction: column;
+      }
+      h1{
+        font-size: 30px;
+      }
+      p{
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>It seems like your url is not valid</h1>
+    <a href="/"><p>Try again</p></a>
+  </body>
+</html>

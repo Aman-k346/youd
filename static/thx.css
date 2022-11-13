@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+body {
+  height: 90vh;
+  width: 100vw;
+  background: url(./hexagon.svg) repeat;
+  background-size: 25px;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  animation: bgani 6s infinite alternate-reverse;
+}
+h1 {
+  text-transform: none;
+  background: -webkit-linear-gradient(#6822ff75, #2e89ff8b);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes bgani {
+  from {
+    background-position: 5%;
+  }
+  to {
+    background-position: 85%;
+  }
+}

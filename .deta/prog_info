@@ -1,0 +1,1 @@
+{"id":"74b3d28b-7856-4fd1-b696-677ea58b768e","space":38072,"runtime":"python3.9","name":"youd","path":"toi2x0","project":"d0uvxu2g","account":"144798365827","region":"ap-south-1","deps":["pytube","fastapi","requests","Jinja2"],"envs":null,"public":true,"log_level":"debug","cron":""}

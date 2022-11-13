@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youd - main</title>
+  <!-- <link rel="stylesheet" href="../static/info.css" /> -->
+  <link rel="stylesheet" href="{{ url_for('static', path='/info.css') }}">
+<style>
+  p{
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <h1>Download</h1>
+  <p>{{title}}</p>
+  <main>
+    <section id="left">
+      <h1>videos</h1>
+      <ul class="content">
+        {% for i in resolutions %}
+
+        <li><a href="/dvideo/{{i}}/{{uri}}">{{title}} - {{ i }}p</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section id="right">
+      <h1>Audio</h1>
+      <ul class="content">
+        {% for i in audio %}
+
+        <li><a href="/daudio/{{i['abr']}}/{{uri}}">{{title}} - {{ i['abr']}}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  </main>
+  
+</body>
+
+</html>
