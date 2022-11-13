@@ -4,7 +4,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from modules import check_video_url
 from pytube import YouTube
-import uvicorn
 import os
 app = FastAPI(docs_url=None,redoc_url=None)
 
@@ -73,8 +72,3 @@ async def download(request: Request,res:str,uri:str):
         return FileResponse(vid)
     else:
         return HTMLResponse("Internal Server error")
-
-
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", port=5000, log_level="info")
