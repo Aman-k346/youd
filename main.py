@@ -83,15 +83,17 @@ async def download(request: Request, res: str, uri: str):
     uri = uri.replace("|", "/")
 
     print(uri)
-
-    file_path = f"videos/"
-
     verify = check_video_url(uri)
 
     if verify == True:
         yt = YouTube(uri)
-        urls = yt.streams.filter(res=f'{res}p').first().url
+        video_url = yt.streams.filter(res=f'{res}p').first().url
         title = yt.title
-        return templates.TemplateResponse("embed.html", context={"request": request,"urls":urls,"title":title})
+        return templates.TemplateResponse("embed.html", context={"request": request,"video_url":video_url,"title":title})
     else:
         return RedirectResponse("/tryagain")
+
+
+@app.exception_handler(404)
+async def custom_404_handler(request, __):
+    return RedirectResponse("/tryagain")

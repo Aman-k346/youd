@@ -8,18 +8,26 @@
   <title>Youd - main</title>
   <!-- <link rel="stylesheet" href="../static/info.css" /> -->
   <link rel="stylesheet" href="{{ url_for('static', path='/info.css') }}">
-<style>
-  p{
-    text-align: center;
-  }
-</style>
+  <style>
+    p {
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-  
-    <h1>{{title}}</h1>
-    <iframe src="{{audio_url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-      style="width: 90%;height:90%;margin:0 auto;display:block;border-radius:5px;"></iframe>  
+
+  <h1>{{title}}</h1>
+
+  {% if audio_url %}
+  <iframe src="{{audio_url}}" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+    style="width: 90%;height:90%;margin:0 auto;display:block;border-radius:5px;"></iframe>
+  {% else %}
+  <iframe src="{{video_url}}" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in- picture" allowfullscreen
+    style="width: 90%;height:90%;margin:0 auto;display:block;border-radius:5px;"></iframe>
+  {% endif %}
 </body>
 
 </html>
