@@ -24,7 +24,7 @@
       <ul class="content">
         {% for i in resolutions %}
 
-        <li><a href="/dvideo/{{i}}/{{uri}}">{{title}} - {{ i }}p</a></li>
+        <li><a href="/dvideo?res={{i}}&uri={{uri}}">{{title}} - {{ i }}p</a></li>
         {% endfor %}
       </ul>
     </section>
@@ -33,7 +33,7 @@
       <ul class="content">
         {% for i in audio %}
 
-        <li><a href="/daudio/{{i['abr']}}/{{uri}}">{{title}} - {{ i['abr']}}</a></li>
+        <li><a href="/daudio?abr={{i['abr']}}&uri={{uri}}">{{title}} - {{ i['abr']}}</a></li>
         {% endfor %}
       </ul>
     </section>
